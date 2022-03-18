@@ -23,6 +23,8 @@ describe("FormSubmitter.vue", () => {
       },
     });
 
+    // trigger also works with other Key, Mouse and other DOM events
+
     await wrapper.find("[data-username]").setValue("alice");
     await wrapper.find("form").trigger("submit.prevent");
     await flushPromises(); // Resolve all pending promises
