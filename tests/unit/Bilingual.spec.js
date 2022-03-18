@@ -9,6 +9,7 @@ config.mocks["$t"] = (msg) => translations[locale][msg];
 describe("Bilingual.vue", () => {
   it("renders successfully", () => {
     const wrapper = mount(Bilingual);
-    // console.log(wrapper.html());
+
+    expect(wrapper.text()).toEqual("こんにちは、世界！");
   });
 });

@@ -24,12 +24,8 @@ export default {
           odds.push(i);
         }
       }
+
       return this.even === false ? odds.join(", ") : evens.join(", ");
-    },
-  },
-  methods: {
-    arrayToString(arr) {
-      return arr.join(", ");
     },
   },
 };

@@ -5,6 +5,7 @@ describe("Emitter.vue", () => {
   it("emits an event with two arguments", () => {
     const wrapper = mount(Emitter);
 
+    // wrapper.vm is the same as "this"
     wrapper.vm.emitEvent(); // call to emitEvent method
 
     expect(wrapper.emitted().myEvent[0]).toEqual(["name", "password"]);

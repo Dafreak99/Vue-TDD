@@ -1,8 +1,6 @@
 import { mount } from "@vue/test-utils";
 import SubmitButton from "@/components/SubmitButton";
 
-const msg = "submit";
-
 const factory = (propsData) => {
   return mount(SubmitButton, {
     propsData: {
@@ -12,16 +10,27 @@ const factory = (propsData) => {
   });
 };
 
+const msg = "submit";
+
 describe("SubmitButton.vue", () => {
   it("displays a non authorized message", () => {
-    const wrapper = factory();
+    const wrapper = mount(SubmitButton, {
+      propsData: {
+        msg,
+      },
+    });
 
     expect(wrapper.find("span").text()).toBe("Not Authorized");
     expect(wrapper.find("button").text()).toBe(msg);
   });
 
   it("displays a privileges message", () => {
-    const wrapper = factory({ isAdmin: true });
+    const wrapper = mount(SubmitButton, {
+      propsData: {
+        msg,
+        isAdmin: true,
+      },
+    });
 
     expect(wrapper.find("span").text()).toBe("Admin Privileges");
     expect(wrapper.find("button").text()).toBe(msg);

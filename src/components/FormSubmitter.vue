@@ -21,9 +21,6 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
-      this.submitted = true;
-    },
     handleSubmitAsync() {
       return this.$http
         .get("/api/v1/register", { username: this.username })
