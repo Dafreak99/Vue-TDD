@@ -1,5 +1,8 @@
 <template>
-  <ComponentWithAsyncCall />
+  <div>
+    <h3>Parent</h3>
+    <ComponentWithAsyncCall />
+  </div>
 </template>
 
 <script>

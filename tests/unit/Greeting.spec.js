@@ -5,7 +5,6 @@ describe("Greeting.vue", () => {
   it("renders a greeting", () => {
     const wrapper = mount(Greeting);
 
-    // expect(wrapper.html().includes("Vue and TDD")).toBe(true);
     expect(wrapper.text()).toMatch("Vue and TDD");
   });
 });

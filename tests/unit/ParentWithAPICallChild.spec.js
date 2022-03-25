@@ -1,10 +1,11 @@
-import { mount, config, shallowMount } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import ParentWithAPICallChild from "@/components/ParentWithAPICallChild";
 import ComponentWithAsyncCall from "@/components/ComponentWithAsyncCall.vue";
 
 describe("ParentWithAPICallChild.vue", () => {
   it("renders with mount and does initialize API call", () => {
-    const wrapper = mount(ParentWithAPICallChild);
+    const wrapper = shallowMount(ParentWithAPICallChild);
+
     expect(wrapper.findComponent(ComponentWithAsyncCall).exists()).toBe(true);
   });
 
@@ -25,3 +26,5 @@ describe("ParentWithAPICallChild.vue", () => {
     expect(wrapper.findComponent(ComponentWithAsyncCall).exists()).toBe(true);
   });
 });
+
+// yarn test tests/unit/ParentWithAPICallChild.spec.js

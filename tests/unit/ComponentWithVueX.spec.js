@@ -21,3 +21,5 @@ describe("ComponentWithVueX", () => {
     expect(wrapper.find(".username").text()).toBe("alice");
   });
 });
+
+// yarn test tests/unit/ComponentWithVueX.spec.js

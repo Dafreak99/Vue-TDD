@@ -18,8 +18,9 @@ jest.mock("axios", () => ({
 }));
 
 describe("authenticate", () => {
+  const commit = jest.fn();
+
   it("authenticated a user", async () => {
-    const commit = jest.fn();
     const username = "alice";
     const password = "password";
 
@@ -33,8 +34,8 @@ describe("authenticate", () => {
   it("catches an error", async () => {
     mockError = true;
 
-    await expect(
-      actions.authenticate({ commit: jest.fn() }, {})
-    ).rejects.toThrow("API Error occurred.");
+    await expect(actions.authenticate({ commit }, {})).rejects.toThrow(
+      "API Error occurred."
+    );
   });
 });
